@@ -1,0 +1,33 @@
+
+name: Update package repositories
+
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: '24 */24 * * *'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.8
+
+    - name: Install requirements.txt
+      run: pip install -r requirements.txt
+
+    - name: Merge package repositories
+      run: python3 -u merge-packages.py
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./output/
+        allow_empty_commit: true
