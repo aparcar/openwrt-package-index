@@ -25,6 +25,9 @@ jobs:
     - name: Merge package repositories
       run: python3 -u merge-packages.py
 
+    - name: Merge profiles
+      run: python3 -u merge-profiles.py
+
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
