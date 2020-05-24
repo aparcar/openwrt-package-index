@@ -2,6 +2,7 @@ import email
 import gzip
 import json
 from datetime import datetime
+from multiprocessing import Pool
 from pathlib import Path
 
 import requests
@@ -40,8 +41,9 @@ def parse_origin_packages(path, repo):
     return packages
 
 
-for target, arch in config.get("targets", {}).items():
-    print(target)
+def update_target(target_arch):
+    target, arch = target_arch
+    print(target, arch)
     target_path = output_path / target
     target_path.mkdir(exist_ok=True, parents=True)
 
@@ -56,7 +58,7 @@ for target, arch in config.get("targets", {}).items():
 
     if not packages:
         print(f"No packages for {target}")
-        continue
+        return
 
     json_manifest = json.dumps(packages, sort_keys=True, separators=(",", ":"))
     json_index = json.dumps(
@@ -71,3 +73,7 @@ for target, arch in config.get("targets", {}).items():
 
     with gzip.open(target_path / "index.json.gz", "wb") as f:
         f.write(json_index.encode())
+
+
+with Pool(10) as p:
+    p.map(update_target, config.get("targets", {}).items())
