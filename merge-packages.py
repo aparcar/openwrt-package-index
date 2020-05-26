@@ -11,9 +11,8 @@ import yaml
 with open("config.yml") as config_file:
     config = yaml.safe_load(config_file)
 
-base_url = "https://downloads.cdn.openwrt.org/snapshots/"
-
-output_path = Path("output")
+base_url = config["base_url_packages"]
+output_path = Path(config["output_dir"])
 
 
 def parse_origin_packages(path, repo):

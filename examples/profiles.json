@@ -1,0 +1,116 @@
+{
+    "metadata_version": 1,
+    "version_code": "r13353-b1604b744b",
+    "version_number": "SNAPSHOT",
+    "profiles": {
+        "7links_px-4885-8m": {
+            "image_prefix": "openwrt-ramips-rt305x-7links_px-4885-8m",
+            "images": [
+                {
+                    "name": "openwrt-ramips-rt305x-7links_px-4885-8m-squashfs-sysupgrade.bin",
+                    "sha256": "7b3591757cd2f62e6b800cec644a6ee95b084a334cee120f19d65d6e9b74b7d7",
+                    "type": "sysupgrade"
+                }
+            ],
+            "supported_devices": [
+                "7links,px-4885-8m",
+                "px-4885-8M"
+            ],
+            "target": "ramips/rt305x",
+            "titles": [
+                {
+                    "model": "PX-4885",
+                    "variant": "8M",
+                    "vendor": "7Links"
+                }
+            ]
+        },
+        "8dev_carambola2": {
+            "image_prefix": "openwrt-ath79-generic-8dev_carambola2",
+            "images": [
+                {
+                    "name": "openwrt-ath79-generic-8dev_carambola2-squashfs-sysupgrade.bin",
+                    "sha256": "be83cbed2944d6fc087f8ef93317ca6f84cc2f839d4fcfb68f9633c6c6213025",
+                    "type": "sysupgrade"
+                }
+            ],
+            "supported_devices": [
+                "8dev,carambola2",
+                "carambola2"
+            ],
+            "target": "ath79/generic",
+            "titles": [
+                {
+                    "model": "Carambola2",
+                    "vendor": "8devices"
+                }
+            ]
+        },
+        "8dev_habanero-dvk": {
+            "image_prefix": "openwrt-ipq40xx-generic-8dev_habanero-dvk",
+            "images": [
+                {
+                    "name": "openwrt-ipq40xx-generic-8dev_habanero-dvk-squashfs-sysupgrade.bin",
+                    "sha256": "3d4ac40eb6418f0520d556e3be6a1a1bc46f26b837ef6a87cfdb22cddfacc123",
+                    "type": "sysupgrade"
+                }
+            ],
+            "supported_devices": [
+                "8dev,habanero-dvk"
+            ],
+            "target": "ipq40xx/generic",
+            "titles": [
+                {
+                    "model": "Habanero DVK",
+                    "vendor": "8devices"
+                }
+            ]
+        },
+        "8dev_jalapeno": {
+            "image_prefix": "openwrt-ipq40xx-generic-8dev_jalapeno",
+            "images": [
+                {
+                    "name": "openwrt-ipq40xx-generic-8dev_jalapeno-squashfs-nand-sysupgrade.bin",
+                    "sha256": "effe02180d4b54c05322c6443b0b95987a023683c5b5cd7be56ac834a0057c3b",
+                    "type": "nand-sysupgrade"
+                },
+                {
+                    "name": "openwrt-ipq40xx-generic-8dev_jalapeno-squashfs-nand-factory.ubi",
+                    "sha256": "d6b95524500d221bf4e47f070378a9e0e3f93f0042b538518ce7a129f67e0482",
+                    "type": "nand-factory"
+                }
+            ],
+            "supported_devices": [
+                "8dev,jalapeno"
+            ],
+            "target": "ipq40xx/generic",
+            "titles": [
+                {
+                    "model": "Jalapeno",
+                    "vendor": "8devices"
+                }
+            ]
+        },
+        "8devices_carambola": {
+            "image_prefix": "openwrt-ramips-rt305x-8devices_carambola",
+            "images": [
+                {
+                    "name": "openwrt-ramips-rt305x-8devices_carambola-squashfs-sysupgrade.bin",
+                    "sha256": "e7eacb25db136faf1d25d9a413ae2ebde4e718970355823ae4ed3382accf71bf",
+                    "type": "sysupgrade"
+                }
+            ],
+            "supported_devices": [
+                "8devices,carambola",
+                "carambola"
+            ],
+            "target": "ramips/rt305x",
+            "titles": [
+                {
+                    "model": "Carambola",
+                    "vendor": "8devices"
+                }
+            ]
+        }
+    }
+}

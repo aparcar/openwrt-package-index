@@ -1,0 +1,53 @@
+{
+    "464xlat": {
+        "architecture": "mips_24kc",
+        "depends": "libc, kmod-nat46, ip",
+        "description": "464xlat provides support to deploy limited IPv4 access services to mobile\n and wireline IPv6-only edge networks without encapsulation (RFC6877)",
+        "filename": "464xlat_12_mips_24kc.ipk",
+        "installed_size": "4118",
+        "license": "GPL-2.0",
+        "maintainer": "Hans Dedecker <dedeckeh@gmail.com>",
+        "package": "464xlat",
+        "repo": "base",
+        "section": "net",
+        "sha256sum": "9216b93cc927213a6e376ec700cb9904c1708fa8d3eeb0b18594ecf386312c0c",
+        "size": "4921",
+        "source": "feeds/base/package/network/ipv6/464xlat",
+        "sourcename": "464xlat",
+        "version": "12"
+    },
+    "6in4": {
+        "architecture": "all",
+        "depends": "libc, kmod-sit, uclient-fetch",
+        "description": "Provides support for 6in4 tunnels in /etc/config/network.\n Refer to http://wiki.openwrt.org/doc/uci/network for\n configuration details.",
+        "filename": "6in4_25-1_all.ipk",
+        "installed_size": "1699",
+        "license": "GPL-2.0",
+        "maintainer": "Jo-Philipp Wich <jo@mein.io>",
+        "package": "6in4",
+        "repo": "base",
+        "section": "net",
+        "sha256sum": "0354bea6e7ec0c444a89f681ecb754d708e5673aecace5927b5bf68d5a3d2aee",
+        "size": "2495",
+        "source": "feeds/base/package/network/ipv6/6in4",
+        "sourcename": "6in4",
+        "version": "25-1"
+    },
+    "6rd": {
+        "architecture": "all",
+        "depends": "libc, kmod-sit",
+        "description": "Provides support for 6rd tunnels in /etc/config/network.\n Refer to http://wiki.openwrt.org/doc/uci/network for\n configuration details.",
+        "filename": "6rd_9-4_all.ipk",
+        "installed_size": "2948",
+        "license": "GPL-2.0",
+        "maintainer": "Steven Barth <cyrus@openwrt.org>",
+        "package": "6rd",
+        "repo": "base",
+        "section": "net",
+        "sha256sum": "a35a1f0b8e2371e890fb7823e8184aba7ba6d5bb712b60c13d504c66f3faa597",
+        "size": "3715",
+        "source": "feeds/base/package/network/ipv6/6rd",
+        "sourcename": "6rd",
+        "version": "9-4"
+    }
+}

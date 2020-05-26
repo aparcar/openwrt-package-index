@@ -13,7 +13,7 @@ with open("config.yml") as config_file:
 
 base_url = "https://images.aparcar.org/rebuild"
 
-output_path = Path("output")
+output_path = Path(config["output_dir"])
 output_path.mkdir(exist_ok=True, parents=True)
 
 
