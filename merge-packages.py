@@ -40,8 +40,10 @@ def parse_origin_packages(path, repo):
     return packages
 
 
-def update_target(target_arch):
-    target, arch = target_arch
+def update_target(target_data):
+    target, data = target_data
+    arch = data["arch"]
+    
     print(target, arch)
     target_path = output_path / target
     target_path.mkdir(exist_ok=True, parents=True)

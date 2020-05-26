@@ -50,3 +50,10 @@ json_profiles = json.dumps(profiles, sort_keys=True, separators=(",", ":"))
 
 with gzip.open(output_path / "profiles.json.gz", "wb") as f:
     f.write(json_profiles.encode())
+
+json_targets = json.dumps(config["targets"], sort_keys=True, separators=(",", ":"))
+
+(output_path / "targets.json").write_text(json_targets)
+
+with gzip.open(output_path / "targets.json.gz", "wb") as f:
+    f.write(json_targets.encode())

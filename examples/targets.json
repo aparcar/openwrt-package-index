@@ -1,0 +1,32 @@
+{
+    "apm821xx/nand": {
+        "arch": "powerpc_464fp"
+    },
+    "apm821xx/sata": {
+        "arch": "powerpc_464fp"
+    },
+    "arc770/generic": {
+        "arch": "arc_arc700"
+    },
+    "archs38/generic": {
+        "arch": "arc_archs"
+    },
+    "armvirt/32": {
+        "arch": "arm_cortex-a15_neon-vfpv4"
+    },
+    "armvirt/64": {
+        "arch": "aarch64_generic"
+    },
+    "at91/sam9x": {
+        "arch": "arm_arm926ej-s"
+    },
+    "at91/sama5": {
+        "arch": "arm_cortex-a5_vfpv4"
+    },
+    "ath25/generic": {
+        "arch": "mips_mips32"
+    },
+    "ath79/generic": {
+        "arch": "mips_24kc"
+    }
+}
