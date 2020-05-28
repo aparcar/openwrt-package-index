@@ -53,6 +53,5 @@ Install the dependencies via `pip install -r requirements.txt` and run the
 scripts:
 
 ```shell
-python3 merge-packages.py
-python3 merge-profiels.py
+python3 generate_json.py
 ```

@@ -1,7 +1,11 @@
 output_dir: ./output
 
-base_url_images: https://images.aparcar.org/rebuild
-base_url_packages: https://downloads.cdn.openwrt.org/snapshots/
+versions:
+  - SNAPSHOT
+  - 19.07.3
+
+json_url: https://images.aparcar.org/rebuild
+base_url: https://downloads.cdn.openwrt.org
 
 repos:
   - base
@@ -152,5 +156,4 @@ targets:
   x86/legacy:
     arch: i386_pentium
   zynq/generic:
-    arch:
     arch: arm_cortex-a9_neon
