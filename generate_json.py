@@ -82,7 +82,7 @@ class OpenWrtJsonUpdater:
         if not packages:
             print(f"No packages for {target}")
             return {}
-        
+
         return packages
 
     def get_profiles(self, target):
@@ -108,6 +108,10 @@ class OpenWrtJsonUpdater:
             list(packages.keys()), sort_keys=True, separators=(",", ":")
         )
 
+        versions = dict(map(lambda p: (p["package"], p["version"]), packages.values()))
+
+        json_versions = json.dumps(versions, sort_keys=True, separators=(",", ":"))
+
         (target_path / "manifests.json").write_text(json_manifest)
 
         with gzip.open(target_path / "manifests.json.gz", "wb") as f:
@@ -117,6 +121,11 @@ class OpenWrtJsonUpdater:
 
         with gzip.open(target_path / "index.json.gz", "wb") as f:
             f.write(json_index.encode())
+
+        (target_path / "versions.json").write_text(json_versions)
+
+        with gzip.open(target_path / "versions.json.gz", "wb") as f:
+            f.write(json_versions.encode())
 
     def write_json_profiles(self, profiles):
         json_profiles = json.dumps(profiles, sort_keys=True, separators=(",", ":"))
@@ -142,6 +151,10 @@ class OpenWrtJsonUpdater:
 
     def update_all(self, threads: int = 10):
         targets = self.get_targets()
+
+        with Pool(threads) as pool:
+            pool.map(self.update_packages, targets)
+
         with Pool(threads) as pool:
             responses = pool.map(self.get_profiles, targets)
             profiles = {"profiles": {}}
@@ -153,10 +166,8 @@ class OpenWrtJsonUpdater:
 
                 self.write_json_profiles(profiles)
 
-        with Pool(threads) as pool:
-            pool.map(self.update_packages, targets)
 
 
 for version in config["versions"]:
     updater = OpenWrtJsonUpdater(version, config["output_dir"])
-    updater.update_all(10)
+    updater.update_all(5)
