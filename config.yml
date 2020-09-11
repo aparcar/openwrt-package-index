@@ -4,8 +4,8 @@ versions:
   - SNAPSHOT
   - 19.07.3
 
-json_url: https://images.aparcar.org/rebuild
-base_url: https://downloads.cdn.openwrt.org
+json_url: https://downloads.openwrt.org
+base_url: https://downloads.openwrt.org
 
 repos:
   - base
